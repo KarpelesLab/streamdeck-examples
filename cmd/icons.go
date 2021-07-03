@@ -8,8 +8,8 @@ import (
 	"os"
 	"os/signal"
 
-	sdeck "github.com/dh1tw/streamdeck"
-	"github.com/markbates/pkger"
+	sdeck "github.com/KarpelesLab/streamdeck"
+	"github.com/KarpelesLab/streamdeck-examples/assets"
 	"github.com/spf13/cobra"
 )
 
@@ -33,7 +33,7 @@ func icons(cmd *cobra.Command, args []string) {
 	}
 	defer sd.ClearAllBtns()
 
-	_user, err := pkger.Open("/assets/images/user.png")
+	_user, err := assets.FS.Open("images/user.png")
 	if err != nil {
 		log.Panic(err)
 	}
@@ -44,7 +44,7 @@ func icons(cmd *cobra.Command, args []string) {
 		log.Panic(err)
 	}
 
-	_tux, err := pkger.Open("/assets/images/tux.png")
+	_tux, err := assets.FS.Open("images/tux.png")
 	if err != nil {
 		log.Panic(err)
 	}
@@ -55,7 +55,7 @@ func icons(cmd *cobra.Command, args []string) {
 		log.Panic(err)
 	}
 
-	_warning, err := pkger.Open("/assets/images/warning.png")
+	_warning, err := assets.FS.Open("images/warning.png")
 	if err != nil {
 		log.Panic(err)
 	}
@@ -66,7 +66,7 @@ func icons(cmd *cobra.Command, args []string) {
 		log.Panic(err)
 	}
 
-	_doctor, err := pkger.Open("/assets/images/doctor.png")
+	_doctor, err := assets.FS.Open("images/doctor.png")
 	if err != nil {
 		log.Panic(err)
 	}
@@ -77,7 +77,7 @@ func icons(cmd *cobra.Command, args []string) {
 		log.Panic(err)
 	}
 
-	_lightbulbOn, err := pkger.Open("/assets/images/lightbulb_on.png")
+	_lightbulbOn, err := assets.FS.Open("images/lightbulb_on.png")
 	if err != nil {
 		log.Panic(err)
 	}
@@ -88,7 +88,7 @@ func icons(cmd *cobra.Command, args []string) {
 		log.Panic(err)
 	}
 
-	_lightbulbOff, err := pkger.Open("/assets/images/lightbulb_off.png")
+	_lightbulbOff, err := assets.FS.Open("images/lightbulb_off.png")
 	if err != nil {
 		log.Panic(err)
 	}

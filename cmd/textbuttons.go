@@ -7,10 +7,10 @@ import (
 	"os"
 	"os/signal"
 
-	sdeck "github.com/dh1tw/streamdeck"
+	sdeck "github.com/KarpelesLab/streamdeck"
+	"github.com/KarpelesLab/streamdeck/label/fonts"
 	"github.com/golang/freetype"
 	"github.com/golang/freetype/truetype"
-	"github.com/markbates/pkger"
 	"github.com/spf13/cobra"
 )
 
@@ -32,7 +32,7 @@ func textbtns(cmd *cobra.Command, args []string) {
 	var err error
 
 	// Load the font
-	_monoFont, err := pkger.Open("/assets/fonts/mplus-1m-regular.ttf")
+	_monoFont, err := fonts.FS.Open("mplus-1m-regular.ttf")
 	if err != nil {
 		log.Fatal(err)
 	}

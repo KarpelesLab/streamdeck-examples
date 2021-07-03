@@ -8,8 +8,8 @@ import (
 	"os/signal"
 	"time"
 
-	sdeck "github.com/dh1tw/streamdeck"
-	"github.com/markbates/pkger"
+	sdeck "github.com/KarpelesLab/streamdeck"
+	"github.com/KarpelesLab/streamdeck-examples/assets"
 	"github.com/spf13/cobra"
 )
 
@@ -34,7 +34,7 @@ func slideshow(cmd *cobra.Command, args []string) {
 	}
 	defer sd.ClearAllBtns()
 
-	_dices, err := pkger.Open("/assets/images/dices.png")
+	_dices, err := assets.FS.Open("images/dices.png")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -45,7 +45,7 @@ func slideshow(cmd *cobra.Command, args []string) {
 		log.Panic(err)
 	}
 
-	_dna, err := pkger.Open("/assets/images/dna.gif")
+	_dna, err := assets.FS.Open("images/dna.gif")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -56,7 +56,7 @@ func slideshow(cmd *cobra.Command, args []string) {
 		log.Panic(err)
 	}
 
-	_octocat, err := pkger.Open("/assets/images/octocat.jpg")
+	_octocat, err := assets.FS.Open("images/octocat.jpg")
 	if err != nil {
 		log.Fatal(err)
 	}

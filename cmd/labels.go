@@ -13,15 +13,14 @@ import (
 
 	"github.com/spf13/cobra"
 
-	sdeck "github.com/dh1tw/streamdeck"
-	_ "github.com/dh1tw/streamdeck-buttons" // needed to load stream-deck-button static assets
-	label "github.com/dh1tw/streamdeck-buttons/label"
+	sdeck "github.com/KarpelesLab/streamdeck"
+	label "github.com/KarpelesLab/streamdeck/label"
 )
 
 var labelsCmd = &cobra.Command{
 	Use:   "labels",
 	Short: "show a bunch of labeled icons on the streamdeck",
-	Long: `This example will instantiate 15 labels on the streamdeck. Each Label
+	Long: `This example will instantiate 6 labels on the streamdeck. Each Label
 is setup as a counter which will increment every 100ms. If a button is
 pressed it will be colored blue until it is released.`,
 	Run: labels,
@@ -43,7 +42,7 @@ func labels(cmd *cobra.Command, args []string) {
 
 	labels := make(map[int]*label.Label)
 
-	for i := 0; i < 15; i++ {
+	for i := 0; i < 6; i++ {
 		label, err := label.NewLabel(sd, i, label.Text(strconv.Itoa(i)))
 		if err != nil {
 			fmt.Println(err)
@@ -81,7 +80,7 @@ func labels(cmd *cobra.Command, args []string) {
 		case <-c:
 			return
 		case <-ticker.C:
-			for i := 0; i < 15; i++ {
+			for i := 0; i < 6; i++ {
 				mu.Lock()
 				labels[i].SetText(fmt.Sprintf("%03d", counter))
 				labels[i].Draw()

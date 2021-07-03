@@ -6,9 +6,8 @@ import (
 	"os"
 	"os/signal"
 
-	sdeck "github.com/dh1tw/streamdeck"
-	_ "github.com/dh1tw/streamdeck-buttons" // needed to load stream-deck-button static assets
-	"github.com/dh1tw/streamdeck-buttons/ledbutton"
+	sdeck "github.com/KarpelesLab/streamdeck"
+	"github.com/KarpelesLab/streamdeck/ledbutton"
 	"github.com/spf13/cobra"
 )
 
